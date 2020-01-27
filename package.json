@@ -1,0 +1,22 @@
+{
+  "name": "stonesha.github.io",
+  "version": "1.0.0",
+  "description": "Personal Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stonesha/stonesha.github.io.git"
+  },
+  "author": "Stone Sha",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/stonesha/stonesha.github.io/issues"
+  },
+  "homepage": "https://github.com/stonesha/stonesha.github.io#readme",
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
+  }
+}
