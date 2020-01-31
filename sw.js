@@ -27,20 +27,20 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-3d63d1a7ec9fdd1bc5af.js"
+    "url": "webpack-runtime-de7817ec05b58ba8f6da.js"
   },
   {
     "url": "commons-487d38bec414ba5177c2.js"
   },
   {
-    "url": "app-03ff92a23bb28aa84ce5.js"
+    "url": "app-4d479cdc0f99f86fb21f.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-ceef87afc058962c4db9.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "ef2ff7fa95ca4ab70cddbd9817ed5237"
+    "revision": "a52d16f0ae7c3e9e2035f7d2008aa93f"
   },
   {
     "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
   },
   {
     "url": "manifest.webmanifest",
-    "revision": "e8e65de758063ac3f4d81584d647bf2b"
+    "revision": "bce740dcadae25e76cfc21ca0b04e56a"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
@@ -140,12 +140,12 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   lastNavigationRequest = event.request.url
 
   let { pathname } = new URL(event.request.url)
-  pathname = pathname.replace(new RegExp(`^/stonesha.github.io`), ``)
+  pathname = pathname.replace(new RegExp(`^`), ``)
 
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/stonesha.github.io/app-03ff92a23bb28aa84ce5.js`))) {
+  if (!resources || !(await caches.match(`/app-4d479cdc0f99f86fb21f.js`))) {
     return await fetch(event.request)
   }
 
@@ -158,7 +158,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
     }
   }
 
-  const offlineShell = `/stonesha.github.io/offline-plugin-app-shell-fallback/index.html`
+  const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
   const offlineShellWithKey = workbox.precaching.getCacheKeyForURL(offlineShell)
   return await caches.match(offlineShellWithKey)
 })
