@@ -3,6 +3,7 @@ require(`dotenv`).config({
 })
 
 module.exports = {
+  pathPrefix: '/stonesha.github.io',
   siteMetadata: {
     // You can overwrite values here that are used for the SEO component
     // Of course you can also add new values here to query them like usual
@@ -15,7 +16,6 @@ module.exports = {
     siteLanguage: 'en',
     siteImage:'',
     author: 'Stone Sha',
-    pathPrefix: '/stonesha.github.io',
   },
   plugins: [
     {
@@ -55,5 +55,14 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
+    `gatsby-plugin-sharp`,
+    'gatsby-transformer-sharp',
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src`,
+        name: `src`,
+      },
+    },
   ],
 }

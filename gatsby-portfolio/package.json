@@ -12,11 +12,12 @@
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
     "start": "gatsby develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gh-pages -b master -d public"
   },
   "dependencies": {
     "@lekoarts/gatsby-theme-cara": "^1.0.18",
-    "gatsby": "^2.13.72",
+    "gatsby": "^2.19.11",
     "gatsby-plugin-google-analytics": "^2.1.8",
     "gatsby-plugin-manifest": "^2.2.6",
     "gatsby-plugin-netlify": "^2.1.6",
@@ -25,6 +26,13 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.0",
-    "gatsby-plugin-offline": "^3.0.33"
+    "gatsby-image": "^2.2.40",
+    "gatsby-plugin-offline": "^3.0.33",
+    "gatsby-plugin-sharp": "^2.4.5",
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-pdf": "^1.1.26",
+    "gatsby-transformer-sharp": "^2.3.14",
+    "gh-pages": "^2.2.0",
+    "pdf-viewer-reactjs": "^2.0.2"
   }
 }
